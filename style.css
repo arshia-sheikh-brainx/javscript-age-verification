@@ -47,3 +47,6 @@ input[type="submit"]{
 input:focus{
     border: 2px solid #FF5677;
 }
+#submit{
+    cursor: pointer;
+}
