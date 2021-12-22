@@ -1,6 +1,8 @@
 //get the form and add event lister to the form 
 
-let formsub = document.getElementById("age");
+const formsub = document.getElementById("ageVerificationForm");
+const redirectLink="https://www.google.com/";
+const message="Your age is restricted";
 formsub.addEventListener("submit", (e) => {
     e.preventDefault();
     verifyAge();
@@ -22,25 +24,25 @@ function verifyAge() {
 
     //    checks for the age verification
     if (difference > 15) {
-        window.location.assign("https://www.google.com/");
+        window.location.assign(redirectLink);
     }
     else if (difference === 15) {
         if (currentMonth > monthvalue) {
-            window.location.assign("https://www.google.com/");
+            window.location.assign(redirectLink);
         } else if (currentMonth == monthvalue) {
             if (currentDay >= dayvalue) {
-                window.location.assign("https://www.google.com/");
+                window.location.assign(redirectLink);
             }
             else {
-                alert("Your age is restricted");
+                alert(message);
             }
 
         } else {
-            alert("Your age is restricted");
+            alert(message);
         }
 
     } else {
-        alert("Your age is restricted");
+        alert(message);
     }
 
 }
